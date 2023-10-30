@@ -8,7 +8,7 @@ const selectCamera = ref('')
 
 <template>
   <div class="h-screen w-screen bg-slate-600 rounded-xl">
-    <h5 class="text-white text-center pt-5 pb-3 opacity-70">参数设置</h5>
+    <h5 class="text-white text-center pt-10 pb-1 opacity-90">参数设置</h5>
     {{ selectCamera }}
     <div class="flex justify-center items-center pr-2">
       <el-select v-model="selectCamera" fit-input-width class="m-2" placeholder="请选择设备">
