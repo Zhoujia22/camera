@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 隐藏垂直滚动条 */
+::-webkit-scrollbar {   
+    display: none;
+}
+
+/* 或者隐藏水平滚动条 */
+::-webkit-scrollbar-horizontal {
+    display: none;
+}
