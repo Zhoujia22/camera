@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import Camera from './components/Camera.vue'
 import Settings from './components/Settings.vue'
+import { useConfigStore } from '@renderer/stores/useConfigStore'
 
-const page = ref('')
+const { config } = useConfigStore()
 </script>
 
 <template>
   <div class="relative">
     <div
-      v-if="page === 'camera'"
+      v-if="config.page === 'camera'"
       class="absolute left-1/2 -translate-x-1/2 py-3 cursor-pointer z-10 hover:transform hover:scale-105 transform-gpu transition-transform duration-200 ease-in-out"
-      @click="page = 'setting'"
+      @click="config.page = 'setting'"
     >
       <el-icon color="#ffffff" size="20">
         <Setting />
@@ -20,14 +20,14 @@ const page = ref('')
     <div
       v-else
       class="absolute left-1/2 -translate-x-1/2 py-3 cursor-pointer z-10 hover:transform hover:scale-105 transform-gpu transition-transform duration-200 ease-in-out"
-      @click="page = 'camera'"
+      @click="config.page = 'camera'"
     >
       <el-icon color="#ffffff" size="20">
         <VideoCamera />
       </el-icon>
     </div>
     <Suspense>
-      <Camera v-if="page === 'camera'" />
+      <Camera v-if="config.page === 'camera'" />
       <Settings v-else />
     </Suspense>
   </div>
